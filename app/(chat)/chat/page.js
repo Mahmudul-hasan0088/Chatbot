@@ -97,7 +97,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`flex flex-col h-screen`}>
+    <div className={"flex flex-col h-screen relative"}>
       <div className="flex-grow overflow-hidden flex flex-col bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-200">
         <main className="flex-grow overflow-y-auto p-4 container mx-auto max-w-3xl">
           <AnimatePresence>
@@ -189,9 +189,9 @@ export default function Home() {
           <div ref={messagesEndRef} />
         </main>
 
-        <footer className="p-4 bg-transparent">
+        <footer className="p-4 bg-transparent sticky bottom-0">
           <div className="max-w-3xl mx-auto">
-            <div className="relative flex items-center">
+            <div className="relative flex items-center px-3 py-2 bg-white dark:bg-gray-800 shadow-md rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
               <input
                 type="text"
                 placeholder="Enter a prompt here"
@@ -199,13 +199,13 @@ export default function Home() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && sendMessage()}
                 disabled={isLoading}
-                className="w-full px-4 py-3 bg-white dark:bg-gray-800 shadow-md rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 bg-transparent rounded-full focus:outline-none text-black dark:text-white placeholder-gray-400"
               />
-              <div className="absolute right-2 flex items-center space-x-2">
+              <div className="flex items-center space-x-2">
                 <button
                   onClick={handleFileUpload}
                   disabled={isLoading}
-                  className="p-2 text-gray-400 hover:text-white transition-colors"
+                  className="p-2 text-gray-700 dark:text-gray-400 dark:hover:text-white transition-colors"
                   aria-label="Upload image"
                 >
                   <Image className="w-5 h-5" />
@@ -213,7 +213,7 @@ export default function Home() {
                 <button
                   onClick={handleVoiceInput}
                   disabled={isLoading}
-                  className="p-2 text-gray-400 hover:text-white transition-colors"
+                  className="p-2 text-gray-700 dark:text-gray-400 dark:hover:text-white transition-colors"
                   aria-label="Voice input"
                 >
                   <Mic className="w-5 h-5" />
