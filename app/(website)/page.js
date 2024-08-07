@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { FaRobot, FaBrain, FaHandsHelping } from 'react-icons/fa';
 
 const MotionDiv = motion.div;
 
@@ -32,11 +33,10 @@ const Home = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-gradient-to-r from-pink-500 to-yellow-500 text-transparent bg-clip-text">
             Welcome to AI Innovate
           </h1>
-          <h2 className="text-xl md:text-2xl font-light text-center text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-xl md:text-2xl font-light text-center text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Transforming the Future with Cutting-Edge Artificial Intelligence
           </h2>
         </MotionDiv>
-
         <MotionDiv
           className="text-center mt-12"
           initial={{ opacity: 0, y: 50 }}
@@ -51,26 +51,25 @@ const Home = () => {
             Get Started
           </motion.button>
         </MotionDiv>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
           {[
             {
               title: "Advanced AI Solutions",
               description:
                 "Our cutting-edge AI technologies are designed to solve complex problems and drive innovation across industries.",
-              icon: "🧠",
+              icon: <FaBrain className="text-6xl text-center mb-4" />,
             },
             {
               title: "Ethical AI Development",
               description:
                 "We prioritize responsible AI practices, ensuring our solutions are transparent, fair, and beneficial to society.",
-              icon: "🌍",
+              icon: <FaHandsHelping className="text-6xl text-center mb-4" />,
             },
             {
               title: "AI Consulting",
               description:
                 "Our team of experts provides guidance on integrating AI into your business processes for maximum impact.",
-              icon: "💡",
+              icon: <FaRobot className="text-6xl text-center mb-4" />,
             },
           ].map((item, index) => (
             <MotionDiv
@@ -82,8 +81,10 @@ const Home = () => {
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               <div className="p-6 flex flex-col h-full">
-                <div className="text-6xl text-center mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                {item.icon}
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">
+                  {item.title}
+                </h3>
                 <p className="text-gray-600 dark:text-gray-400 flex-grow">
                   {item.description}
                 </p>
