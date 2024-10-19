@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
   const chat = model.startChat({
     history: messages.slice(0, -1).map((msg) => ({
