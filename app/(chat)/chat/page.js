@@ -271,9 +271,9 @@ export default function Home() {
                 aria-label="Send message"
               >
                 {isLoading ? (
-                  <div className="size-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                 ) : (
-                  <Send className="w-6 h-6" />
+                  <Send className="w-5 h-5" />
                 )}
               </button>
             </div>
